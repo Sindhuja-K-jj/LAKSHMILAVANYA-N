@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const accessKey = "RZEIOVfPhS7vMLkFdd2TSKGFBS4o9_FmcV1Nje3FSjw";
 
 const formEl = document.querySelector("form");
@@ -52,3 +53,34 @@ formEl.addEventListener("submit", (event) => {
 showMoreButtonEl.addEventListener("click", () => {
   searchImages();
 });
+=======
+const buttonsEl = document.querySelectorAll("button");
+
+const inputFieldEl = document.getElementById("result");
+
+for (let i = 0; i < buttonsEl.length; i++) {
+  buttonsEl[i].addEventListener("click", () => {
+    const buttonValue = buttonsEl[i].textContent;
+    if (buttonValue === "C") {
+      clearResult();
+    } else if (buttonValue === "=") {
+      calculateResult();
+    } else {
+      appendValue(buttonValue);
+    }
+  });
+}
+
+function clearResult() {
+  inputFieldEl.value = "";
+}
+
+function calculateResult() {
+  inputFieldEl.value = eval(inputFieldEl.value);
+}
+
+function appendValue(buttonValue) {
+  inputFieldEl.value += buttonValue;
+  //   inputFieldEl.value = inputFieldEl.value + buttonValue;
+}
+>>>>>>> 84536b65620c7f0354996be96c098339453f3abc
